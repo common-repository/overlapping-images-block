@@ -1,0 +1,78 @@
+@use './layout-mixins' as mixins;
+@use './variables' as *;
+
+@mixin layout{
+  
+  .wp-block-overlapping-images-block-overlapping-images.layout-text-down-up,
+  .wp-block-overlapping-images-block-overlapping-images.layout-text-up-down,
+  .wp-block-overlapping-images-block-overlapping-images.layout-up-down-text,
+  .wp-block-overlapping-images-block-overlapping-images.layout-down-up-text{
+
+    .overlapping-imgs-center-content{
+
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 2 / 9;
+        grid-row: 3 / 13;
+      }
+    
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 6 / 13;
+        grid-row: 1 / 12;
+      }
+    
+      .overlapping-imgs-innerblocks-wrap{
+        grid-column: 11 / 18;
+        grid-row: 4 / 11;
+      }
+
+      @include mixins.query( media, $tablet){
+        @include mixins.medium-down-up-text;
+      }
+      
+      @include mixins.query(media, $lg-mobile){
+        @include mixins.small-down-up-text;
+      }
+
+      @include mixins.query(media, $mobile){
+        @include mixins.very-small-down-up-text;
+      }
+
+      @include mixins.query(media, $sm-mobile){
+        @include mixins.tiny-down-up-text;
+      }
+    }
+
+    @include mixins.query(media, $full){
+      .overlapping-imgs-center-content{
+        width: 100%;
+      }
+    }
+  }
+
+}
+
+@mixin styles{
+  @include mixins.query(media, $medium){
+    .overlapping-imgs-innerblocks-wrap{
+      .overlapping-imgs-card{
+        padding: 16px;
+      }
+    }
+  }
+
+  @include mixins.query(media, $tablet){
+    .wp-block-overlapping-images-block-overlapping-images .overlapping-imgs-innerblocks-wrap{
+      z-index: 1;
+    }
+  
+    .wp-block-overlapping-images-block-overlapping-images .overlapping-imgs-image-one-wrap{
+      z-index: 0;
+    }
+  } 
+
+  @include mixins.query( media, $lg-mobile){
+    .wp-block-overlapping-images-block-overlapping-images .overlapping-imgs-innerblocks-wrap{
+      grid-column: 4 / 16;
+    }
+  }
+}

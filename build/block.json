@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "overlapping-images-block/overlapping-images",
+  "version": "1.0.0",
+  "title": "Overlapping Images",
+  "category": "design",
+  "icon": "images-alt",
+  "description": "Shows decoratively overlapping image and text content.",
+  "keywords": [
+    "image",
+    "layout",
+    "photo",
+    "pictures"
+  ],
+  "supports": {
+    "html": false,
+    "align": [
+      "full",
+      "wide"
+    ],
+    "spacing": {
+      "margin": [
+        "top",
+        "bottom"
+      ]
+    }
+  },
+  "attributes": {
+    "urlFirst": {
+      "type": "string",
+      "selector": "img.overlapping-imgs-image-one",
+      "source": "attribute",
+      "attribute": "src"
+    },
+    "altFirst": {
+      "type": "string",
+      "src": "attribute",
+      "attribute": "alt",
+      "selector": "img.overlapping-imgs-image-one",
+      "default": ""
+    },
+    "idFirst": {
+      "type": "number"
+    },
+    "urlSecond": {
+      "type": "string",
+      "selector": "img.overlapping-imgs-image-two",
+      "source": "attribute",
+      "attribute": "src"
+    },
+    "idSecond": {
+      "type": "number"
+    },
+    "backdropColor": {
+      "type": "string",
+      "default": "#faf3f0"
+    },
+    "align": {
+      "type": "string",
+      "default": "full"
+    },
+    "layout": {
+      "type": "string",
+      "default": "down-up-text"
+    }
+  },
+  "textdomain": "overlapping-images",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}

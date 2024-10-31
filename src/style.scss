@@ -1,0 +1,113 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ @use './layouts/_down-up-text.scss';
+ @use './layouts/_up-down-text.scss';
+ @use './layouts/_text-up-down.scss';
+ @use './layouts/_text-down-up.scss';
+ @use './layouts/_no-containers.scss';
+ @use './layouts/_variables.scss' as *;
+
+@supports not ( container-type: inline-size ){
+  @include no-containers.layout;
+  @include no-containers.styles;
+}
+
+.wp-block-overlapping-images-block-overlapping-images {
+  position: relative;
+  container-type: inline-size;
+
+  .overlapping-imgs-center-content{
+    display: grid !important;
+    color: #000;
+    grid-template-columns: repeat( 18, 1fr );
+    grid-template-rows: repeat( 12, 1fr);
+    min-height: 480px;
+    max-height: 660px;
+    width: $full;
+    margin: 0 auto;
+
+    @container (max-width: #{$full}){
+      &{
+        width: 100%;
+      }
+    }
+
+    img.overlapping-imgs-image-one,
+    img.overlapping-imgs-image-two{
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .overlapping-imgs-image-one-wrap img{
+      border: 16px solid #fff;
+    }
+
+    .overlapping-imgs-innerblocks-wrap{
+
+      .overlapping-imgs-card{
+        background: #fff;
+        padding: 32px;
+      }
+      
+    }
+
+    .overlapping-imgs-image-one-wrap{
+      z-index: 1;
+    }
+
+    @container (max-width: #{$medium} ){
+      &{
+        grid-template-rows: repeat( 12, minmax( 35px, 45px ) ); 
+  
+        .overlapping-imgs-innerblocks-wrap{
+  
+          .overlapping-imgs-card{
+            padding: 24px;
+          }
+        }
+      }
+    }
+
+    @container (max-width: #{$tablet} ){
+    
+      .overlapping-imgs-innerblocks-wrap{
+        z-index: 1;
+      }
+    
+      .overlapping-imgs-image-one-wrap{
+        z-index: 0;
+      }
+
+      &{
+        grid-template-rows: repeat( 12, 1fr );
+      }
+    }
+    
+  }
+
+  .overlapping-imgs-backdrop{
+    top: 8.33%;
+    bottom: 8.33%;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+@media (max-width: #{$tablet}){
+  .wp-block-overlapping-images-block-overlapping-images{
+
+    .overlapping-imgs-center-content{
+      min-height: unset;
+      max-height: 708px;
+    }
+  }
+}

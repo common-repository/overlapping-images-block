@@ -1,0 +1,62 @@
+@use './layout-mixins' as mixins;
+@use 'variables' as *;
+
+.wp-block-overlapping-images-block-overlapping-images.layout-down-up-text{
+
+  .overlapping-imgs-center-content{
+  
+    .overlapping-imgs-innerblocks-wrap{
+      grid-column: 12 / 17;
+      grid-row: 4 / 10;
+    }
+    
+    .overlapping-imgs-image-one-wrap{
+      grid-column: 3 / 9;
+      grid-row: 3 / 13;
+    }
+    
+    .overlapping-imgs-image-two-wrap{
+      grid-row: 1 / 12;
+      grid-column: 7 / 13;
+    }
+
+  @container (max-width: #{$large} ){
+    .overlapping-imgs-image-one-wrap{
+      grid-column: 2 / 9;
+    }
+
+    .overlapping-imgs-image-two-wrap{
+      grid-column: 6 / 13;
+    }
+
+    .overlapping-imgs-innerblocks-wrap{
+      grid-column: 12 / 18;
+    }
+  }
+
+  @container (max-width: #{$medium} ){
+    .overlapping-imgs-innerblocks-wrap{
+      grid-row: 4 / 11;
+      grid-column: 11 / 18;
+    }
+  }
+
+  @include mixins.query(container, $tablet){
+    @include mixins.medium-down-up-text;
+  }
+
+  @include mixins.query(container, $lg-mobile){
+    @include mixins.small-down-up-text;
+  }
+
+  @include mixins.query(container, $mobile){
+    @include mixins.very-small-down-up-text;
+  }
+
+  @include mixins.query(container, $small){
+    @include mixins.tiny-down-up-text;
+  }
+
+}
+
+}

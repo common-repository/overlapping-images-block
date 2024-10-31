@@ -1,0 +1,26 @@
+{
+	"name": "overlapping-images",
+	"version": "0.1.0",
+	"description": "Overlapping images and text block.",
+	"author": "Peter Steele",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^26.9.0"
+	},
+	"dependencies": {
+		"@wordpress/blob": "^3.38.0",
+		"@wordpress/data": "^9.8.0",
+		"@wordpress/icons": "^9.29.0",
+		"@wordpress/notices": "^4.6.0"
+	}
+}

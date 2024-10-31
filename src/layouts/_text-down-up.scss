@@ -1,0 +1,115 @@
+@use 'variables' as *;
+
+.wp-block-overlapping-images-block-overlapping-images.layout-text-down-up{
+
+  .overlapping-imgs-center-content{
+  
+    .overlapping-imgs-innerblocks-wrap{
+      grid-column: 3 / 8;
+      grid-row: 4 / 10;
+    }
+    
+    .overlapping-imgs-image-one-wrap{
+      grid-column: 11 / 17;
+      grid-row: 1 / 11;
+    }
+    
+    .overlapping-imgs-image-two-wrap{
+      grid-row: 2 / 13;
+      grid-column: 7 / 13;
+    }
+    
+    
+    @container (max-width: #{$large} ){
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 11 / 18;
+      }
+
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 6 / 13;
+      }
+    
+      .overlapping-imgs-innerblocks-wrap{
+        grid-column: 2 / 8;
+      }
+    }
+
+    @container (max-width: #{$medium}){
+      
+      .overlapping-imgs-innerblocks-wrap{
+        grid-row: 3 / 10;
+        grid-column: 2 / 9;
+      }
+
+    }
+
+    @container ( max-width: #{$tablet} ){
+
+      .overlapping-imgs-innerblocks-wrap{
+        grid-row: 6 / 11;
+        grid-column: 6/ 14;
+      }
+      
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 9 / 18;
+        grid-row: 1 / 7;
+      }
+      
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 2 / 11;
+        grid-row: 3 / 9
+      }
+    }
+
+    @container (max-width: #{$lg-mobile} ){
+
+      .overlapping-imgs-innerblocks-wrap{
+        grid-column: 4 / 16;
+      }
+
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 8 / 16;
+        grid-row: 1 / 7;
+      }
+
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 4 / 12;
+        grid-row: 2 / 8
+      }
+      
+    }
+
+    @container (max-width: #{$mobile} ){
+
+      .overlapping-imgs-innerblocks-wrap{
+        grid-column: 2 / 18;
+      }
+
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 9 / 18; 
+      }
+
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 2 / 11;
+      }
+
+    }
+
+    @container (max-width: #{$small} ){
+
+      .overlapping-imgs-innerblocks-wrap{
+        grid-column: 1 / 19;
+      }
+
+      .overlapping-imgs-image-one-wrap{
+        grid-column: 7 / 19;
+      }
+
+      .overlapping-imgs-image-two-wrap{
+        grid-column: 1 / 11;
+      }
+
+    }
+  }
+
+}
